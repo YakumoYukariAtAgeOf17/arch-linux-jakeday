@@ -6,7 +6,7 @@
 pkgbase=linux-jakeday       # Build kernel with a different name
 _srcname=linux-4.15
 pkgver=4.15.14
-patchver=4.15.12-1
+patchver=4.15.15-1
 pkgrel=1
 arch=('x86_64')
 url="https://github.com/jakeday/linux-surface"
