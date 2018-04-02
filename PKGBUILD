@@ -59,7 +59,12 @@ prepare() {
   patch -Np1 -i ../0002-drm-i915-edp-Only-use-the-alternate-fixed-mode-if-it.patch
 
   # add jakeday patches
-  patch -Np1 -i ../linux-surface-${patchver}/patches/4.15/*.patch
+  msg "Applying jakeday patches..."
+  for f in ../linux-surface-${patchver}/patches/4.15/*.patch; do
+    msg "Applying $f"
+    patch -Np1 -i ${f}
+  done
+  msg "Done applying jakeday patches."
 
   cat ../config - >.config <<END
 CONFIG_LOCALVERSION="${_kernelname}"
